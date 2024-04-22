@@ -44,38 +44,131 @@
         </style>
     </head>
     <body>
-        <header>
-            <h1>Dimakatso Chipape</h1>
-        </header>
+        
         <section id="personal-info">
-            <h2>Personal Information</h2>
-            <p>Email: dimakatsosharon94@gmail.com</p>
-            <p>Phone: +27798342994</p>
-            <p>Location: Midrand, Johannesburg, Gauteng</p>
         </section>
     
         <section id="education">
-            <h2>Educational Background</h2>
-            <p>University of Limpopo <br> BSc in Mathematical Science <br> <strong>Majors</strong>: Computer Science and Statistics</p>
-        </section>
+           </section>
     
         <section id="projects">
-            <h2>Projects</h2>
-            <p><strong>Simple Shell </strong><br>  To provide basic interface for users A shell is a command-line interface that allows users to interact with the operating system. <br> <strong> Technologies: </strong> C programming language: The shell is implemented using the C programming language, taking advantage of its low-level system access and standard libraries.
-                <br> Operating system interfaces: The shell utilizes operating system interfaces, such as system calls, to interact with the underlying operating system and execute commands.</strong></p>
-        </section>
+           </section>
     
         <section id="experience">
-            <h2>Working Experience</h2>
-            <p>Alx_Africa <br> Software Engineer trainee <br> April 2023 - present <br> <strong>skills:</strong> HTML, CSS, JAVASCRIPT, PYTHON, SQL, GITHUB AND LINUX.</p>
-            <p>Masithuthuke Holdings <br> NQF6 System Support <br> April 2018 - January 2019 <br> <strong>skills:</strong> NQF6 System Support Theory Studies and SQL Database studies.</p>
-        </section>
+             </section>
     
         <section id="other-info">
-            <h2>Certifications</h2>
-            <p>MCSA: Web Applications - Certified 2019 - Microsoft <br> MCSD: App Builder — Certified 2019 - Microsoft <br> Microsoft Certified: Power Platform Fundamentals - Microsoft <br> Microsoft Certified: Power Platform App Maker Associate - Microsoft <br> Microsoft Certified: Power Platform Developer Associate - Microsoft</p>
-        </section>
-        <br>
-        <a href="home.html" target="_blank">Home page</a>
+           </section>
+           <a href="home.html">Home page</a>
+<script>
+    
+    // Define personal information variables
+let firstName = "Dimakatso";
+let lastName = "Chipape";
+let fullName = firstName + " " + lastName;
+
+let bio = "I am a passionate web developer with a love for creating impactful solutions that bridge technology with user needs.";
+
+let projects = [
+    {
+        title: "Portfolio Website",
+        description: "Developed a portfolio website showcasing my projects as well as skills.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        link: "http://127.0.0.1:5500/assets/home.html"
+    },
+    {
+        title: "AirBnB clone",
+        description: "Developed an Airbnb website to help users find and book rentals all over the world",
+        technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
+        link: "https://github.com/DChipape/AirBnB_clone"
+    }
+];
+
+let education = [
+    {
+        degree: "Bachelor of Science in Computer Science",
+        institution: "University of Limpopo",
+        year: "2015 - 2017"
+    }
+];
+
+ // JavaScript variable holding experience information
+ let experience = `
+    <section id="experience">
+      <h2>Working Experience</h2>
+      <p>Alx_Africa <br> Software Engineer trainee <br> April 2023 - present <br> <strong>skills:</strong> HTML, CSS, JAVASCRIPT, PYTHON, SQL, GITHUB AND LINUX.</p>
+      <p>Masithuthuke Holdings <br> NQF6 System Support <br> April 2018 - January 2019 <br> <strong>skills:</strong> NQF6 System Support Theory Studies and SQL Database studies.</p>
+    </section>
+  `;
+
+let contactInformation = {
+    email: "dimakatsosharon94@gmail.com",
+    phone: "+27798342994",
+    linkedin: "https://www.linkedin.com/in/dimakatso-chipape/",
+    github: "https://github.com/DChipape"
+};
+
+// JavaScript variable holding certifications information
+let certifications = `
+    <h2>Certifications</h2>
+    <p>MCSA: Web Applications - Certified 2019 - Microsoft <br>
+    MCSD: App Builder — Certified 2019 - Microsoft <br>
+    Microsoft Certified: Power Platform Fundamentals - Microsoft <br>
+    Microsoft Certified: Power Platform App Maker Associate - Microsoft <br>
+    Microsoft Certified: Power Platform Developer Associate - Microsoft</p>
+  `;
+
+  // Create HTML content using JavaScript variables
+  let personalInfoHTML = `
+    <div>
+      <h1>${firstName} ${lastName}</h1>
+      <p>${bio}</p>
+    </div>
+    <div>
+      <h2>Education:</h2>
+      <ul>
+        <li>${education[0].degree} - ${education[0].institution}, ${education[0].year}</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Projects:</h2>
+      <ul>
+  `;
+
+  // Render projects
+  projects.forEach(function(project) {
+    personalInfoHTML += `
+        <li>
+          <h3>${project.title}</h3>
+          <p>Description: ${project.description}</p>
+          <p>Technologies: ${project.technologies.join(", ")}</p>
+          <p><a href="${project.link}" target="_blank">View Project</a></p>
+        </li>
+    `;
+  });
+
+  // Render certifications
+  personalInfoHTML += `
+</ul>
+    </div>
+    <div>
+      ${certifications}
+    </div>
+    <div>
+      ${experience}
+    </div>
+    <div>
+      <h2>Contact Information:</h2>
+      <p>Email: ${contactInformation.email}</p>
+      <p>Phone: ${contactInformation.phone}</p>
+      <p>LinkedIn: <a href="${contactInformation.linkedin}" target="_blank">${contactInformation.linkedin}</a></p>
+      <p>GitHub: <a href="${contactInformation.github}" target="_blank">${contactInformation.github}</a></p>
+    </div>
+  `;
+
+  // Display the rendered data in the HTML page
+  document.getElementById("personal-info").innerHTML = personalInfoHTML;
+;
+</script>
     </body>
 </html>
