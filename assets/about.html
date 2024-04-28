@@ -1,13 +1,174 @@
 <html>
     <head>
         <title>About Me</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            h1 {
+                color: black;
+            }
+            h2 {
+                color: #666;
+            }
+            p {
+                color: #444;
+            }
+
+            section {
+                background-color: #ffffff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+
+            a:link, a:visited {
+                background-color: lightgrey;
+                color: black;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+
+            }
+
+            a:hover, a:active {
+                background-color: green;
+            }
+        </style>
     </head>
     <body>
-        <h1>About myself</h1>
-        <img src="straight-up.jpg" width="10%" alt="a picture of myself">
-        <br>
-        <p>I am <strong>Dimakatso Chipape</strong>, I come from Limpopo. <br> I live in Johannesurg Gauteng. <br> I am 27 years old.</p>
-        <br>
-        <a href="home.html">Home page</a>
+        
+        <section id="personal-info">
+        </section>
+    
+        <section id="education">
+           </section>
+    
+        <section id="projects">
+           </section>
+    
+        <section id="experience">
+             </section>
+    
+        <section id="other-info">
+           </section>
+           <a href="home.html">Home page</a>
+<script>
+    
+    // Define personal information variables
+let firstName = "Dimakatso";
+let lastName = "Chipape";
+let fullName = firstName + " " + lastName;
+
+let bio = "I am a passionate web developer with a love for creating impactful solutions that bridge technology with user needs.";
+
+let projects = [
+    {
+        title: "Portfolio Website",
+        description: "Developed a portfolio website showcasing my projects as well as skills.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        link: "http://127.0.0.1:5500/assets/home.html"
+    },
+    {
+        title: "AirBnB clone",
+        description: "Developed an Airbnb website to help users find and book rentals all over the world",
+        technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
+        link: "https://github.com/DChipape/AirBnB_clone"
+    }
+];
+
+let education = [
+    {
+        degree: "Bachelor of Science in Computer Science",
+        institution: "University of Limpopo",
+        year: "2015 - 2017"
+    }
+];
+
+ // JavaScript variable holding experience information
+ let experience = `
+    <section id="experience">
+      <h2>Working Experience</h2>
+      <p>Alx_Africa <br> Software Engineer trainee <br> April 2023 - present <br> <strong>skills:</strong> HTML, CSS, JAVASCRIPT, PYTHON, SQL, GITHUB AND LINUX.</p>
+      <p>Masithuthuke Holdings <br> NQF6 System Support <br> April 2018 - January 2019 <br> <strong>skills:</strong> NQF6 System Support Theory Studies and SQL Database studies.</p>
+    </section>
+  `;
+
+let contactInformation = {
+    email: "dimakatsosharon94@gmail.com",
+    phone: "+27798342994",
+    linkedin: "https://www.linkedin.com/in/dimakatso-chipape/",
+    github: "https://github.com/DChipape"
+};
+
+// JavaScript variable holding certifications information
+let certifications = `
+    <h2>Certifications</h2>
+    <p>MCSA: Web Applications - Certified 2019 - Microsoft <br>
+    MCSD: App Builder — Certified 2019 - Microsoft <br>
+    Microsoft Certified: Power Platform Fundamentals - Microsoft <br>
+    Microsoft Certified: Power Platform App Maker Associate - Microsoft <br>
+    Microsoft Certified: Power Platform Developer Associate - Microsoft</p>
+  `;
+
+  // Create HTML content using JavaScript variables
+  let personalInfoHTML = `
+    <div>
+      <h1>${firstName} ${lastName}</h1>
+      <p>${bio}</p>
+    </div>
+    <div>
+      <h2>Education:</h2>
+      <ul>
+        <li>${education[0].degree} - ${education[0].institution}, ${education[0].year}</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Projects:</h2>
+      <ul>
+  `;
+
+  // Render projects
+  projects.forEach(function(project) {
+    personalInfoHTML += `
+        <li>
+          <h3>${project.title}</h3>
+          <p>Description: ${project.description}</p>
+          <p>Technologies: ${project.technologies.join(", ")}</p>
+          <p><a href="${project.link}" target="_blank">View Project</a></p>
+        </li>
+    `;
+  });
+
+  // Render certifications
+  personalInfoHTML += `
+</ul>
+    </div>
+    <div>
+      ${certifications}
+    </div>
+    <div>
+      ${experience}
+    </div>
+    <div>
+      <h2>Contact Information:</h2>
+      <p>Email: ${contactInformation.email}</p>
+      <p>Phone: ${contactInformation.phone}</p>
+      <p>LinkedIn: <a href="${contactInformation.linkedin}" target="_blank">${contactInformation.linkedin}</a></p>
+      <p>GitHub: <a href="${contactInformation.github}" target="_blank">${contactInformation.github}</a></p>
+    </div>
+  `;
+
+  // Display the rendered data in the HTML page
+  document.getElementById("personal-info").innerHTML = personalInfoHTML;
+;
+</script>
     </body>
 </html>
